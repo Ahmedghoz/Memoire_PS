@@ -1,1 +1,15 @@
 
+rcont=function(X,lambda)
+{
+n=length(X)
+u=runif(n,0,1)
+x=-log(u)/lambda
+x
+Plot(x,xlim=c(0,n),col="green",main=" simulation d'une loi exponentielle")
+return(x)
+}
+X=rexp(100,5)
+Lambda=5
+K=rexp(X,lambda)
+K
+Plot(K,type="o")
