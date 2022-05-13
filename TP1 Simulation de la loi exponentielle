@@ -4,37 +4,26 @@
   # ce qui vous ai demandé c'est de vous même créer un code de simulation
  
 ##Simulation d'une loi exponentielle
-Sim_loi_exp=function(n,lambda)
+Sim_loi_exp=function(n,lambda) # n= la taille de l'echantillon , lambda= une valeur pour le parametre de la loi exponentielle 
 {
   
-  u=runif(n,0,1)
-  x=-log(u)/lambda
+  u=runif(n,0,1) # simulation d'un echantillon d'une loi uniforme
+  x=-log(u)/lambda # simulation d'un echantillon de la loi exponentielle 
    
   return(x)
   
   
 }
-##simulation par la méthode d'inversion
-Sim_meth_inv=function(n,lambda)
-{
-
-  u=runif(n,0,1)
-x= -log(1-u)/lambda
-x
-return(x)
-}
+ *****
+# exemple 1:
 n=100
-
 lambda=5
 par(mfrow=c(2,2))
 
-##Expemple_1   Simulation d'une loi exponentielle
+
 
 Fnc=Sim_loi_exp(n,lambda)
 plot(Fnc,type = "h",main = "simulation d'une loi exponentielle")
 hist(Fnc,freq = F, main = "simulation d'une loi exponentielle", col = "lightblue")
-##Exemple_2    Simulation par la méthode d'inversion
-Sim_inv=Sim_meth_inv(n,lambda)
-plot(Sim_inv,type = "h",main = "simulation par la méthode d'inversion ")
-hist(Sim_inv,freq=F,main = "simulation par la méthode d'inversion ", col = "brown")
+
 
