@@ -19,9 +19,12 @@ Sim_loi_exp=function(n,lambda) # n= la taille de l'echantillon , lambda= une val
 n=10
 lambda=5
 Y=Sim_loi_exp(n,lambda)
-var(Y) # calcul de la variance empirique 
-mean(Y) # calcul de la moyeene empirique 
-summary(Y)# avoir la description statistique de l'echantillon 
+### calcul de la variance empirique
+var(Y) 
+### calcul de la moyenne emirique
+mean(Y) 
+### avoir la discription statistique de l'echantillon  
+*****
 # representation graphique :
 par(mfrow=c(2,2))
 plot(Y,type = "h",main = "simulation d'une loi exponentielle")
