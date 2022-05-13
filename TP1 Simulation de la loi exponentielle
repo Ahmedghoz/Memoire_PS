@@ -16,14 +16,17 @@ Sim_loi_exp=function(n,lambda) # n= la taille de l'echantillon , lambda= une val
 }
  *****
 # exemple 1:
-n=100
+n=10
 lambda=5
+Y=Sim_loi_exp(n,lambda)
+var(Y) # calcul de la variance empirique 
+mean(Y) # calcul de la moyeene empirique 
+summary(Y)# avoir la description statistique de l'echantillon 
+# representation graphique :
 par(mfrow=c(2,2))
-
-
-
-Fnc=Sim_loi_exp(n,lambda)
-plot(Fnc,type = "h",main = "simulation d'une loi exponentielle")
-hist(Fnc,freq = F, main = "simulation d'une loi exponentielle", col = "lightblue")
+plot(Y,type = "h",main = "simulation d'une loi exponentielle")
+hist(Y,freq = F, main = "simulation d'une loi exponentielle", col = "lightblue")
+boxplot(Y,col="red", border=3)
+barplot(Y,col=1:10)
 
 
