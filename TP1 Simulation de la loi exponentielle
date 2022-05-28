@@ -32,5 +32,16 @@ plot(Y,type = "h",main = "simulation d'une loi exponentielle")
 hist(Y,freq = F, main = "simulation d'une loi exponentielle", col = "lightblue")
 boxplot(Y,col="red", border=3)
 barplot(Y,col=1:10)
+Sim_Loi_norm=function(n,m,sigma)
+  {
+  u1 <- runif(n)
+  u2 <- runif(n)
+  r2=Sim_loi_exp(n,1/2)
+  Z1 <- sqrt(r2) * cos(2*pi*u2)
+  Z2 <- sqrt(r2) * sin(2*pi*u2)
+  Z=m+sigma*c(Z0,Z1)
+  Z
+  return(Z)
+}
 
 
