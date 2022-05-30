@@ -79,4 +79,4 @@ for(i in 1:1000) {
   
 }
 Prop=S/1000
-   
+Prop   
