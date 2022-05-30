@@ -53,6 +53,14 @@ Sim_Loi_norm=function(n,m,sigma)
 
   curve(dnorm(x,10,sqrt(2)), add = TRUE) ##la densite de la loi normale N(m,sigma)
 
-
+**** Question4*****
+Test_Nor=function(Pvalue,alpha)
+{
+H=NULL
+if(Pvalue>alpha)
+{H=1}
+else{H=0}
+return(H)
+}
   
    
