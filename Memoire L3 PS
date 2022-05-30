@@ -40,11 +40,8 @@ Sim_Loi_norm=function(n,m,sigma)
   r2=Sim_loi_exp(n,1/2)
   Z1=sqrt(r2) * cos(2*pi*u2)
   Z2=sqrt(r2) * sin(2*pi*u2)
-  Z=m+sigma*c(Z1,Z2)
-  Z
-  x=rnorm(n,mean = m,sd=sqrt(sigma)) # deduire un echantillon de la loi normale de moyenne "m" et de variance "sig" carre.
-  x
-  return(Z)
+  X=m+sigma*c(Z1,Z2)  
+  return(X)
 }
 ##Qst2
 
