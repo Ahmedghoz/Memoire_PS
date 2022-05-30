@@ -46,12 +46,14 @@ Sim_Loi_norm=function(n,m,sigma)
   x
   return(Z)
 }
- D=Sim_Loi_norm(1000,10,2)
+##Qst2
 
-  hist(D, col="thistle4" , proba=TRUE ,main=" N(m,sigma) ") ##'histogramme de l echantillon
+ D=Sim_Loi_norm(1000,10,2) ## n=1000 m=10 sigma=2
+
+  hist(D, col="thistle4" , proba=TRUE ,main=" N(m,sigma) ") ## L'histogramme de l echantillon
 
 
-  curve(dnorm(x,10,sqrt(2)), add = TRUE) ##la densite de la loi normale N(m,sigma)
+  curve(dnorm(x,10,sqrt(2)), add = TRUE) ## trace la densite de la loi normale N(m,sigma)
 
 **** Question4*****
 Test_Nor=function(Pvalue,alpha)
