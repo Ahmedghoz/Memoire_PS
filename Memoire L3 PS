@@ -62,5 +62,22 @@ if(Pvalue>alpha)
 else{H=0}
 return(H)
 }
+  ##Qst 5
+  n=20
+ m=0
+sigma=1
+S=0
+alpha=0.05
+pvalue=vector("logical",1000)
+for(i in 1:1000) { 
+  x=Sim_Loi_norm(20,0,1)
+  Test_ks=ks.test(x,"pnorm",mean=0,sd=sqrt(1))
   
+  pvalue[i]=Test_ks$p.value
+  He=Test_Nor(pvalue[i],alpha)#tester normalite 
+  S=He+S
+  
+  
+}
+Prop=S/1000
    
