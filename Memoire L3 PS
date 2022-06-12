@@ -58,9 +58,9 @@ Sim_Loi_norm=function(n,m,sigma) # n:la taille de l'echantillon ,m= la moyenne,s
   curve(dnorm(x,10,sqrt(2)), add = TRUE) ## trace la densite de la loi normale N(m,sigma)
 ***** Question 3******
 # Tester la normalité de l'echantillon simulé
-Test_ks=ks.test(x,"pnorm",mean=m,sd=sigma))
+Test_ks=ks.test(x,"pnorm",mean=m,sd=sigma)) # il y a une parenthèse en plus, l'avez vous exécuté ??
 pvalue=Test_ks$p.value
-**** Question4*****
+# **** Question4***** # ne mettez pas des étoiles mais un "#" 
 # le code affichant 1 si le test accepte la normalité et 0 sinon
 Test_Nor=function(Pvalue,alpha)
 {
