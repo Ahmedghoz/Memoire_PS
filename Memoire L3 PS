@@ -16,7 +16,7 @@ Sim_loi_exp=function(n,lambda) # n= la taille de l'echantillon , lambda= une val
 }
  *****
 # exemple 1:
-n=10
+n=10 # taille très petite pour une loi continue
 lambda=5
 Y=Sim_loi_exp(n,lambda)
 # calcul de la variance empirique
@@ -28,10 +28,10 @@ summary(Y)
 *****
 # representation graphique :
 par(mfrow=c(2,2))
-plot(Y,type = "h",main = "simulation d'une loi exponentielle")
+plot(Y,type = "h",main = "simulation d'une loi exponentielle") # pas convenable
 hist(Y,freq = F, main = "simulation d'une loi exponentielle", col = "lightblue")
-boxplot(Y,col="red", border=3)
-barplot(Y,col=1:10)
+boxplot(Y,col="red", border=3) # ça vous sert  à quoi  ici ?
+barplot(Y,col=1:10) # ce n'est pas convenable comme graphe pour une loi continue
 
 TP2:SIMULATION D'UNE LOI NORMAL.
 ***** Question 1******
@@ -52,10 +52,10 @@ Sim_Loi_norm=function(n,m,sigma) # n:la taille de l'echantillon ,m= la moyenne,s
 ##L'histogramme de la loi normal + la suporposition de la densité de la loi normal de même paramêtres
  D=Sim_Loi_norm(1000,10,2) ## n=1000 m=10 sigma=2
 
-  hist(D, col="thistle4" , proba=TRUE ,main=" N(m,sigma) ") ## L'histogramme de l echantillon
+  hist(D, col="thistle4" , proba=TRUE ,main=" N(m,sigma) ") ## L'histogramme de l echantillon # il faut choisir une bonne échelle pour le graphique car il n'apparait pas bien
 
 
-  curve(dnorm(x,10,sqrt(2)), add = TRUE) ## trace la densite de la loi normale N(m,sigma)
+  curve(dnorm(x,10,sqrt(2)), add = TRUE) ## trace la densite de la loi normale N(m,sigma) # la courbe n'apparait pas bien
 ***** Question 3******
 # Tester la normalité de l'echantillon simulé
 Test_ks=ks.test(x,"pnorm",mean=m,sd=sigma)) # il y a une parenthèse en plus, l'avez vous exécuté ??
@@ -88,7 +88,7 @@ for(i in 1:1000) {
 
 }
 Prop=S/1000
-*****Qusetion 6*****
+*****Qusetion 6***** Ce code n'a pas fonctionné !!
 # Simulation de 1000 echantillons de tailles 100 et comter la proportion de fois que le test a accépté la normalité
 n=100
 m=0
