@@ -46,7 +46,7 @@ Sim_Loi_norm=function(n,m,sigma) # n:la taille de l'echantillon ,m= la moyenne,s
   ##L'histogramme de la loi normal + la suporposition de la densité de la loi normal de même paramêtres
   
   D=Sim_Loi_norm(1000,10,2) ## n=1000 m=10 sigma=2
-  hist(D, col="thistle4" , proba=TRUE ,main=" N(m=10,sigma=2) ") ## L'histogramme de l echantillon # il faut choisir une bonne échelle pour le graphique car il n'apparait pas bien
+  hist(D, col="thistle4" , proba=TRUE ,main=" N(m=10,sigma=2) ") ## L'histogramme de l echantillon  
   curve(dnorm(x,10,2), add = TRUE) ## trace la densite de la loi normale N(m=10,sigma=2) 
 #Question 3
 # Tester la normalité de l'echantillon simulé
