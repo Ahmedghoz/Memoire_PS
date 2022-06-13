@@ -97,8 +97,8 @@ alpha=0.05
 pvalue=vector("logical",1000)
 for(i in 1:1000)
 { 
-Sim_Loi_norm(100,0,1)
-Test_ks=ks.test(x,"pnorm",mean=0,sd=sqrt(1))
+y=Sim_Loi_norm(100,0,1)
+Test_ks=ks.test(y,"pnorm",mean=0,sd=sqrt(1))
 pvalue[i]=Test_ks$p.value
 He=Test_Nor(pvalue[i],alpha)#Tester la normalité 
 S=He+S
