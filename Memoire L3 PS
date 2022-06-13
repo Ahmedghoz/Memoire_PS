@@ -44,9 +44,10 @@ Sim_Loi_norm=function(n,m,sigma) # n:la taille de l'echantillon ,m= la moyenne,s
 ##Question 2
 
   ##L'histogramme de la loi normal + la suporposition de la densité de la loi normal de même paramêtres
+  
   D=Sim_Loi_norm(1000,10,2) ## n=1000 m=10 sigma=2
   hist(D, col="thistle4" , proba=TRUE ,main=" N(m=10,sigma=2) ") ## L'histogramme de l echantillon # il faut choisir une bonne échelle pour le graphique car il n'apparait pas bien
- curve(dnorm(x,10,2), add = TRUE) ## trace la densite de la loi normale N(m=10,sigma=2) 
+  curve(dnorm(x,10,2), add = TRUE) ## trace la densite de la loi normale N(m=10,sigma=2) 
 #Question 3
 # Tester la normalité de l'echantillon simulé
 m=10
@@ -81,8 +82,12 @@ for(i in 1:1000) {
   S=He+S
 
 }
+S
 Prop=S/1000
+Prop
+
 #Qusetion 6 
+
 # Simulation de 1000 echantillons de tailles 100 et comter la proportion de fois que le test a accépté la normalité
 n=100
 m=0
@@ -91,7 +96,8 @@ S=0
 alpha=0.05
 pvalue=vector("logical",1000)
 for(i in 1:1000)
-{ Sim_Loi_norm(100,0,1)
+{ 
+Sim_Loi_norm(100,0,1)
 Test_ks=ks.test(x,"pnorm",mean=0,sd=sqrt(1))
 pvalue[i]=Test_ks$p.value
 He=Test_Nor(pvalue[i],alpha)#Tester la normalité 
