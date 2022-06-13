@@ -26,11 +26,10 @@ mean(Y)
 # avoir la discription statistique de l'echantillon  
 summary(Y)
 # representation graphique :
-par(mfrow=c(2,2))
-plot(Y,type = "h",main = "simulation d'une loi exponentielle") # pas convenable
+
 hist(Y,freq = F, main = "simulation d'une loi exponentielle", col = "lightblue")
-boxplot(Y,col="red", border=3) # ça vous sert  à quoi  ici ?
-barplot(Y,col=1:10) # ce n'est pas convenable comme graphe pour une loi continue
+curve(dexp(x,lambda),add=T,col="red")
+
 
 ##TP2:SIMULATION D'UNE LOI NORMAL.
 #Qestion 1
