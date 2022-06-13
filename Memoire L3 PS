@@ -1,10 +1,6 @@
-# suivez l'algorithme que je vous ai donné
 
- # simule déjà un échatillon de la loi exponentielle à partir de cette commande existante dans R;
-  # ce qui vous ai demandé c'est de vous même créer un code de simulation
- 
 ##Simulation d'une loi exponentielle
-Sim_loi_exp=function(n,lambda) # n= la taille de l'echantillon , lambda= une valeur pour le parametre de la loi exponentielle 
+Sim_loi_exp=function(n,lambda) # n la taille de l'echantillon , lambda une valeur pour le parametre de la loi exponentielle 
 {
   
   u=runif(n,0,1) # simulation d'un echantillon d'une loi uniforme
@@ -16,7 +12,7 @@ Sim_loi_exp=function(n,lambda) # n= la taille de l'echantillon , lambda= une val
 }
  
 # exemple 1:
-n=10 # taille très petite pour une loi continue
+n=1000 # taille très petite pour une loi continue
 lambda=5
 Y=Sim_loi_exp(n,lambda)
 # calcul de la variance empirique
@@ -28,7 +24,7 @@ summary(Y)
 # representation graphique :
 
 hist(Y,freq = F, main = "simulation d'une loi exponentielle", col = "lightblue")
-curve(dexp(x,lambda),add=T,col="red")
+curve(dexp(x,lambda),add=T,col="red") 
 
 
 ##TP2:SIMULATION D'UNE LOI NORMAL.
@@ -50,15 +46,15 @@ Sim_Loi_norm=function(n,m,sigma) # n:la taille de l'echantillon ,m= la moyenne,s
   ##L'histogramme de la loi normal + la suporposition de la densité de la loi normal de même paramêtres
   D=Sim_Loi_norm(1000,10,2) ## n=1000 m=10 sigma=2
   hist(D, col="thistle4" , proba=TRUE ,main=" N(m=10,sigma=2) ") ## L'histogramme de l echantillon # il faut choisir une bonne échelle pour le graphique car il n'apparait pas bien
- curve(dnorm(x,10,2), add = TRUE) ## trace la densite de la loi normale N(m=10,sigma=2) # la courbe n'apparait pas bien
+ curve(dnorm(x,10,2), add = TRUE) ## trace la densite de la loi normale N(m=10,sigma=2) 
 #Question 3
 # Tester la normalité de l'echantillon simulé
 m=10
 sigma=2
-Test_ks=ks.test(D,"pnorm",mean=m,sd=sigma) # il y a une parenthèse en plus, l'avez vous exécuté ??
+Test_ks=ks.test(D,"pnorm",mean=m,sd=sigma)  
 pvalue=Test_ks$p.value
 pvalue
-#Question4  #ne mettez pas des étoiles mais un "#" 
+#Question4  
 # le code affichant 1 si le test accepte la normalité et 0 sinon
 Test_Nor=function(Pvalue,alpha)
 {
@@ -86,7 +82,7 @@ for(i in 1:1000) {
 
 }
 Prop=S/1000
-#Qusetion 6 Ce code n'a pas fonctionné !!
+#Qusetion 6 
 # Simulation de 1000 echantillons de tailles 100 et comter la proportion de fois que le test a accépté la normalité
 n=100
 m=0
